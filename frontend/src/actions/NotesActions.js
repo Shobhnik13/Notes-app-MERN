@@ -13,7 +13,7 @@ export const listNotes=()=>async(dispatch,getState)=>{
                     Authorization:`Bearer ${userInfo.token}`
                 }
             }
-            const {data}=await axios.get('http://localhost:5000/api/notes',config) 
+            const {data}=await axios.get('https://notesappbackend0.onrender.com/api/notes',config) 
             // console.log(data)
             dispatch({
                 type:'NOTE_LIST_SUCCESS',
