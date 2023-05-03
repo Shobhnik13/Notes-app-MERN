@@ -9,7 +9,7 @@ import axios from "axios"
           }
         }
         // setLoading(true)
-        const {data}=await axios.post('http://localhost:5000/api/users/login',{email,password},config)
+        const {data}=await axios.post('https://notesappbackend0.onrender.com/api/users/login',{email,password},config)
         console.log(data)
         dispatch({type:USER_LOGIN_SUCCESS,payload:data})
         localStorage.setItem('userInfo',JSON.stringify(data))
@@ -39,7 +39,7 @@ import axios from "axios"
       }
     }
     // setLoading(true)
-    const {data}=await axios.post('http://localhost:5000/api/users',{name,email,pic,password},config)
+    const {data}=await axios.post('https://notesappbackend0.onrender.com/api/users',{name,email,pic,password},config)
       dispatch({type:USER_REGISTER_SUCCESS,payload:data})
     console.log(data)
     // setLoading(false)
@@ -66,7 +66,7 @@ export const updateProfile=(user)=>async(dispatch,getState)=>{
       }
     }
     // setLoading(true)
-    const {data}=await axios.post('http://localhost:5000/api/users/profile',user,config)
+    const {data}=await axios.post('https://notesappbackend0.onrender.com/api/users/profile',user,config)
     // console.log(data)
     dispatch({type:USER_UPDATE_SUCCESS,payload:data})
     dispatch({type:USER_LOGIN_SUCCESS,payload:data})

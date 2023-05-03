@@ -46,7 +46,7 @@ export const createNotes=(title,content,category)=>async(dispatch,getState)=>{
                     Authorization:`Bearer ${userInfo.token}`
                 }
             }
-            const {data}=await axios.post('http://localhost:5000/api/notes/create',{title,content,category},config) 
+            const {data}=await axios.post('https://notesappbackend0.onrender.com/api/notes/create',{title,content,category},config) 
             // console.log(data)
             dispatch({
                 type:'NOTE_CREATE_SUCCESS',
@@ -79,7 +79,7 @@ export const updateNotes=(id,title,content,category)=>async(dispatch,getState)=>
                     Authorization:`Bearer ${userInfo.token}`
                 }
             }
-            const {data}=await axios.put(`http://localhost:5000/api/notes/${id}`,{title,content,category},config) 
+            const {data}=await axios.put(`https://notesappbackend0.onrender.com/api/notes/${id}`,{title,content,category},config) 
             // console.log(data)
             dispatch({
                 type:'NOTE_UPDATE_SUCCESS',
@@ -111,7 +111,7 @@ export const deleteNotes=(id)=>async(dispatch,getState)=>{
                     Authorization:`Bearer ${userInfo.token}`
                 }
             }
-            const {data}=await axios.delete(`http://localhost:5000/api/notes/${id}`,config) 
+            const {data}=await axios.delete(`https://notesappbackend0.onrender.com/api/notes/${id}`,config) 
             // console.log(data)
             dispatch({
                 type:'NOTE_DELETE_SUCCESS',
