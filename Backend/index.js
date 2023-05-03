@@ -34,6 +34,20 @@ app.use('/api/users',userRoutes)
 //notes route-crud
 app.use('/api/notes',notesRoutes)
 
+// deployemnet 
+// __dirname=path.resolve()
+// if(process.env.NODE_ENV==='production')
+// {
+// app.use(express.static(path.join(__dirname,'/frontend/dist')))
+// app.get('*',(req,res)=>{
+//     res.sendFile(path.resolve(__dirname,'frontend','dist','index.html'))
+// })
+// }
+// else{
+//     app.get('/',(req,res)=>{
+//         res.send('success')
+//     })
+// }
 app.use(notFound)
 app.use(errorHandler)
 // creating server 
